@@ -26,9 +26,9 @@ def binomial(m, n):
 def margFunc(kk, mm, dd, ww):
     c = 0
     for x in range(1, M+1, 1):
-        xia = max(0, x-1-M+mm)
-        shang = min(min(mm - 1, dd - x * kk + x - 1), x-1)
-        for a in range(xia, shang + 1, 1):
+        low = max(0, x-1-M+mm)
+        high = min(min(mm - 1, dd - x * kk + x - 1), x-1)
+        for a in range(low, high + 1, 1):
             b = x-1-a
             c = c + binomial(mm-1, a) * binomial(M-mm, b) * (r**x) * ((1-r)**(M-x));
     return ww * c
